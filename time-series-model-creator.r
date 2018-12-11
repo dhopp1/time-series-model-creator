@@ -62,24 +62,24 @@ ts_model <- function(series, seasonality, lags_to_check, ahead){
   }
   
   #list of parameters to check for seasonal AR, only check seasonal if seasonality != 0
-  ar_params <- c(1:lags_to_check)
+  ar_params <- c(0:lags_to_check)
   if(seasonality == 0){
     sar_params <- 0
   }else{
-    sar_params <- c(1:lags_to_check)
+    sar_params <- c(0:lags_to_check)
   }
   #list of parameters to check for seasonal MA
-  ma_params <- c(1:lags_to_check)
+  ma_params <- c(0:lags_to_check)
   if(seasonality == 0){
     sma_params <- 0
   }else{
-    sma_params <- c(1:lags_to_check)
+    sma_params <- c(0:lags_to_check)
   }
   #list of parameters to check for seasonal differencing
   if(seasonality == 0){
     si <- 0
   }else{
-    si <- c(3)
+    si <- c(0:3)
   }
   
   #testing permutations of various SARIMA models
