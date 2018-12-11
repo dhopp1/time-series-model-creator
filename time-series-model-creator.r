@@ -1,23 +1,4 @@
-#Select time series data file, expects a file with 2 columns, 1 for the period label, 1 for the values
-myFile <- file.choose()
-data  <- read.csv(myFile)
-
-#rename columns
-names(data) <- c("period", "value")
-
-#convert to timeseries datatype
-#year of first observation
-year <- 2015
-#period of first observation
-period <- 3
-#frequency of observations, 52 for weekly, 12 for monthly, etc.
-frequency <- 12
-#seasonality of observations
-seasonality <- 12
-
-#create time series data type
-series <- ts(data$value, start = c(year, period), frequency = frequency)
-
+#model takes a time series object as input
 #function to return relevant time series information, series = time series, seasonality = periodicitiy of seasonality, 0 for no seasonality, lags_to_check = number of lags for AR(X) etc. process to check, ahead = number ahead for forecasting
 ts_model <- function(series, seasonality, lags_to_check, ahead){
   #importing necessary libraries
