@@ -2,6 +2,7 @@
 R function to find best model to fit a time series dataset, similar in functionality to auto.arima (https://www.rdocumentation.org/packages/forecast/versions/8.4/topics/auto.arima). It works by using the SARIMA function of the _astsa_ library to estimate various models and select the best one based on Bayesian Information Criteria, as well as returning info on heteroskedasticity and stationarity. It was written to fulfill my specific needs, so for most people auto.arima should suffice.
 
 <br>
+
 ## Prerequisites
 <br>
 Necessary libraries for the function are:
