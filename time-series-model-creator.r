@@ -17,7 +17,7 @@ ts_model <- function(series, seasonality, lags_to_check, ahead){
     series_heteroskedasticity <- F
   }
   
-  #testing for stationarity using the Augmented Dickey-Fuller test with .05 significance level, i is model parameter for eventual SARIMA model
+  #testing for stationarity using the Augmented Dickey-Fuller test with .05 significance level, d is model parameter for eventual SARIMA model
   if(adf.test(series)$p.value <= .05){
     stationarity <- "stationary"
     d <- 0
